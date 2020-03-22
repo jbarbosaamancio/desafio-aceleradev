@@ -47,12 +47,11 @@ def cifrar(msg, chave):
             num = ord(simb)
             num += chave
             
-            if simb.islower():
-                if  num > ord('z'):
-                    num -= TMH_MAX_CHAR
+            if  num > ord('z'):
+                num -= TMH_MAX_CHAR
 
-                elif num < ord('a'):
-                    num += TMH_MAX_CHAR
+            elif num < ord('a'):
+                num += TMH_MAX_CHAR
 
             traduzido += chr(num)
 
@@ -73,12 +72,13 @@ def decifrar(msg, chave):
             num = ord(simb)
             num += chave
             
-            if simb.islower():
-                if  num > ord('z'):
-                    num -= TMH_MAX_CHAR
-                elif num < ord('a'):
-                    num += TMH_MAX_CHAR
+            if  num > ord('z'):
+                num -= TMH_MAX_CHAR
+            elif num < ord('a'):
+                num += TMH_MAX_CHAR
+
             traduzido += chr(num)
+            
         else:
             traduzido += simb  
     return traduzido
